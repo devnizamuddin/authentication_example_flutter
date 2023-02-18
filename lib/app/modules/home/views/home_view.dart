@@ -51,6 +51,9 @@ class HomeView extends GetView<HomeController> {
                               '',
                           style: textStyle,
                         ),
+                        TextButton(
+                            onPressed: controller.logout,
+                            child: const Text('Logout'))
                       ],
                     ),
                   ),
