@@ -72,11 +72,13 @@ class ApiCommunication {
         errorSnack('Status : ${e.toString()}');
       }
       if (response != null && response.statusCode == 200) {
-        debugPrint(response.data.toString());
+        debugPrint('response: ${response.data}');
         return response;
-      } else {
-        errorSnack('${response?.statusCode}');
-      }
+      } else if (response != null && response.statusCode == 201) {
+        return response;
+      } //else {
+      //   errorSnack('${response?.statusCode}');
+      // }
     } else {
       alertSnack('Sorry, You are not connected with mobile/wifi network');
     }
