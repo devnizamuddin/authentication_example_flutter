@@ -1,4 +1,3 @@
-import '../../../config/app_themes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
