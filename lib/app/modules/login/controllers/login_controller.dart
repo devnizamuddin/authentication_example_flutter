@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:authentication_example_flutter/app/models/login_response.dart';
 import 'package:authentication_example_flutter/app/service/api_communication.dart';
 import 'package:flutter/material.dart';
