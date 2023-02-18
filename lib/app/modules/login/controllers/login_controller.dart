@@ -9,7 +9,7 @@ import '../../../routes/app_pages.dart';
 import '../../../utils/snackbar.dart';
 
 class LoginController extends GetxController {
-  final GlobalKey<FormState> formKey = GlobalKey();
+  GlobalKey<FormState> formKey = GlobalKey();
 
   late TextEditingController userNameController;
   late TextEditingController passwordController;

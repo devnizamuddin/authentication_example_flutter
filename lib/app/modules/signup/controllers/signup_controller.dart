@@ -6,7 +6,7 @@ import '../../../service/api_communication.dart';
 import '../../../utils/snackbar.dart';
 
 class SignupController extends GetxController {
-  final GlobalKey<FormState> formKey = GlobalKey();
+  GlobalKey<FormState> formKey = GlobalKey();
   late TextEditingController firstNameController;
   late TextEditingController lastNameController;
   late TextEditingController emailNameController;
@@ -40,7 +40,7 @@ class SignupController extends GetxController {
       );
       if (response?.statusCode == 201) {
         successSnack('Signup Successfull');
-        Get.offAllNamed(Routes.LOGIN);
+        Get.offNamed(Routes.LOGIN);
       }
     }
   }
