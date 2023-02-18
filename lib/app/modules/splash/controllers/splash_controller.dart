@@ -15,9 +15,9 @@ class SplashController extends GetxController {
         Map<String, dynamic> responseBody =
             _box.read(AppGetStorages.KEY_USER_DATA);
         final loginResponse = LoginResponseModel.fromMap(responseBody);
-        Get.toNamed(Routes.HOME, arguments: loginResponse);
+        Get.offNamed(Routes.HOME, arguments: loginResponse);
       } else {
-        Get.toNamed(Routes.LOGIN);
+        Get.offNamed(Routes.LOGIN);
       }
     });
   }
