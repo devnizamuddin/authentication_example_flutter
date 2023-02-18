@@ -76,9 +76,67 @@ class ApiCommunication {
         return response;
       } else if (response != null && response.statusCode == 201) {
         return response;
-      } //else {
-      //   errorSnack('${response?.statusCode}');
-      // }
+      }
+    } else {
+      alertSnack('Sorry, You are not connected with mobile/wifi network');
+    }
+    return null;
+  }
+
+  Future<Response?> doGetRequest({
+    String? endPoint,
+    bool enableLoading = true,
+    Map<String, dynamic>? header,
+  }) async {
+    Response? response;
+    String url = '$_baseUrl${endPoint ?? ''}';
+    Map<String, dynamic> apiHeader = header ??
+        <String, String>{
+          'Accept': '*/*',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        };
+
+    debugPrint('$url\n$apiHeader');
+
+    ConnectivityResult connectivityResult =
+        await (Connectivity().checkConnectivity());
+
+    if (connectivityResult == ConnectivityResult.mobile ||
+        connectivityResult == ConnectivityResult.wifi) {
+      try {
+        if (enableLoading) loader();
+        response = await _dio.get(
+          url,
+          options: Options(headers: apiHeader),
+        );
+        if (enableLoading) loaderDismiss();
+      } on DioError catch (e) {
+        if (enableLoading) loaderDismiss();
+        debugPrint(e.toString());
+        if (e.type == DioErrorType.connectionTimeout) {
+          errorSnack('Connection timeout');
+        } else if (e.type == DioErrorType.receiveTimeout) {
+          errorSnack('Receive timeout');
+        }
+        if (e.response?.statusCode != null && e.response!.statusCode! > 200) {
+          errorSnack('Status : ${e.message}');
+        }
+      } on SocketException catch (e) {
+        if (enableLoading) loaderDismiss();
+        debugPrint(e.message);
+        errorSnack('Os Error : ${e.osError}');
+      } catch (e) {
+        if (enableLoading) loaderDismiss();
+        debugPrint(e.toString());
+        errorSnack('Status : ${e.toString()}');
+      }
+      if (response != null && response.statusCode == 200) {
+        debugPrint('response: ${response.data}');
+        return response;
+      } else if (response != null && response.statusCode == 201) {
+        return response;
+      }
     } else {
       alertSnack('Sorry, You are not connected with mobile/wifi network');
     }
