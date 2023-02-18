@@ -36,7 +36,7 @@ class ApiCommunication {
           'Access-Control-Allow-Origin': '*',
         };
 
-    debugPrint(url);
+    debugPrint('$url\n$requestData');
 
     ConnectivityResult connectivityResult =
         await (Connectivity().checkConnectivity());
