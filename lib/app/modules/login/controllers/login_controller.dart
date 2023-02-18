@@ -52,7 +52,7 @@ class LoginController extends GetxController {
           _box.write(AppGetStorages.KEY_LOGIN_STATUS, true);
           _box.write(AppGetStorages.KEY_USER_DATA, responseBody);
           final loginResponse = LoginResponseModel.fromMap(responseBody);
-          Get.offAllNamed(Routes.HOME);
+          Get.offAllNamed(Routes.HOME, arguments: loginResponse);
         } else {
           errorSnack(responseBody['error_description']);
         }
