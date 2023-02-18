@@ -1,4 +1,4 @@
-import 'package:authentication_example_flutter/app/config/app_themes.dart';
+import '../../../config/app_themes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

@@ -1,4 +1,4 @@
-import 'package:authentication_example_flutter/app/modules/splash/bindings/splash_binding.dart';
+import 'app/modules/splash/bindings/splash_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 

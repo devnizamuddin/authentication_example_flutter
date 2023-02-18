@@ -1,5 +1,5 @@
-import 'package:authentication_example_flutter/app/models/login_response.dart';
-import 'package:authentication_example_flutter/app/service/api_communication.dart';
+import '../../../models/login_response.dart';
+import '../../../service/api_communication.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

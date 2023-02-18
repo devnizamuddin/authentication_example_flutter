@@ -1,6 +1,6 @@
-import 'package:authentication_example_flutter/app/models/login_response.dart';
-import 'package:authentication_example_flutter/app/models/profile_response.dart';
-import 'package:authentication_example_flutter/app/routes/app_pages.dart';
+import '../../../models/login_response.dart';
+import '../../../models/profile_response.dart';
+import '../../../routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 

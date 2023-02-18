@@ -1,4 +1,4 @@
-import 'package:authentication_example_flutter/app/routes/app_pages.dart';
+import '../../../routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:authentication_example_flutter/app/config/app_getstorages.dart';
+import '../../../config/app_getstorages.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
