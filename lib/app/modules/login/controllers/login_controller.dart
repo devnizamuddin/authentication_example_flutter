@@ -65,7 +65,9 @@ class LoginController extends GetxController {
     _box.write(AppGetStorages.KEY_PASSWORD, passwordController.text);
   }
 
-  Future<void> signUp() async {}
+  Future<void> signUp() async {
+    Get.toNamed(Routes.SIGNUP);
+  }
 
   @override
   void onInit() {
